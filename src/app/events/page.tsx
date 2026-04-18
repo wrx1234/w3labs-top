@@ -1,5 +1,14 @@
-import { redirect } from 'next/navigation';
+'use client'
+import NavBar from "@/components/home/NavBar";
+import { EventsPage } from "@/components/home/events-page";
+import Footer from "@/components/home/Footer";
 
-export default function EventsRedirectPage() {
-  redirect('/zh/events');
+export default function Page() {
+  return (
+    <>
+      <NavBar />
+      <EventsPage />
+      <Footer />
+    </>
+  );
 }
