@@ -74,4 +74,24 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    @apply mt-8 text-foreground;
+  }
+
+  .prose p,
+  .prose li {
+    @apply text-muted-foreground;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply my-4 pl-6;
+  }
+
+  .prose a {
+    @apply text-primary no-underline;
+  }
 }

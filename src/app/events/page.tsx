@@ -1,14 +1,5 @@
-'use client'
-import NavBar from "@/components/home/NavBar";
-import { EventsPage } from "@/components/home/events-page";
-import Footer from "@/components/home/Footer";
+import { redirect } from 'next/navigation';
 
-export default function Page() {
-  return (
-    <>
-      <NavBar />
-      <EventsPage />
-      <Footer />
-    </>
-  );
+export default function EventsRedirectPage() {
+  redirect('/zh/events');
 }
