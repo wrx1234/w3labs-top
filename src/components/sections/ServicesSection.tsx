@@ -24,6 +24,9 @@ export default function ServicesSection() {
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold">{t('服务报价', 'Our Services')}</h2>
         <p className="mt-2 text-muted-foreground">{t('社区是我们的根，但我们也帮真实的业务发生。', 'The community is our foundation. Real business is what grows from it.')}</p>
+        <div className="mt-4 inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+          {t('新增：RWA 结构设计与链上产品化支持已加入首页能力展示', 'New: RWA structuring and on-chain productization capability is now highlighted on the homepage')}
+        </div>
 
         <div className="mt-12 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-8">
           {/* Featured card */}

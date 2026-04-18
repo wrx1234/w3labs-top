@@ -5,6 +5,7 @@ import FloatingSidebar from '@/components/sections/FloatingSidebar'
 import HeroSection from '@/components/sections/HeroSection'
 import StatsSection from '@/components/sections/StatsSection'
 import MissionSection from '@/components/sections/MissionSection'
+import RwaSection from '@/components/sections/RwaSection'
 import ContentSection from '@/components/sections/ContentSection'
 import ServicesSection from '@/components/sections/ServicesSection'
 import CasesSection from '@/components/sections/CasesSection'
@@ -21,6 +22,7 @@ export default function Page() {
         <HeroSection />
         <StatsSection />
         <MissionSection />
+        <RwaSection />
         <ContentSection />
         <ServicesSection />
         <CasesSection />

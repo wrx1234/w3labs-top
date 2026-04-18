@@ -26,9 +26,11 @@ interface WfNode {
 
 function NodeCard({ node, lang }: { node: WfNode; lang: 'zh' | 'en' }) {
   return (
-    <Card className={`p-3 w-32 border-2 ${colorMap[node.color]} bg-background/70 shrink-0`}>
-      <span className="text-xl">{node.icon}</span>
-      <p className="text-xs font-semibold mt-1.5 leading-tight">{lang === 'zh' ? node.title : node.titleEn}</p>
+    <Card className={`w-28 shrink-0 border-2 bg-background/70 p-3 sm:w-32 ${colorMap[node.color]}`}>
+      <p className="flex items-start gap-1 text-xs font-semibold leading-tight">
+        <span className="text-base leading-none">{node.icon}</span>
+        <span>{lang === 'zh' ? node.title : node.titleEn}</span>
+      </p>
       <p className="text-[10px] text-muted-foreground mt-1">{lang === 'zh' ? node.desc : node.descEn}</p>
     </Card>
   )
@@ -239,19 +241,19 @@ export default function CasesSection() {
   const { lang, t } = useLang()
 
   return (
-    <section id="cases" className="py-24">
-      <div className="container mx-auto px-6">
+    <section id="cases" className="py-20 sm:py-24">
+      <div className="container mx-auto px-4 sm:px-6">
         <span className="text-xs font-medium text-primary uppercase tracking-wider">Real Cases</span>
-        <h2 className="text-3xl font-bold mt-4">{t('落地案例', 'Real Cases')}</h2>
+        <h2 className="mt-4 text-2xl font-bold sm:text-3xl">{t('落地案例', 'Real Cases')}</h2>
 
         <div className="mt-12 space-y-16">
           {/* Case 1 */}
           <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <span className="text-5xl font-bold text-primary/20">01</span>
+            <div className="flex items-start gap-3 sm:gap-4">
+              <span className="text-4xl font-bold text-primary/20 sm:text-5xl">01</span>
               <div>
                 <Badge variant="secondary">{t('物业行业', 'Property Management')}</Badge>
-                <h3 className="text-xl font-bold mt-2">{t('智慧物业 AI 改造', 'Smart Property AI Transformation')}</h3>
+                <h3 className="text-xl font-bold mt-2">{t('智慧物业服务工作流', 'Smart Property Service Workflow')}</h3>
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed max-w-3xl">
@@ -266,11 +268,11 @@ export default function CasesSection() {
 
           {/* Case 2 */}
           <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <span className="text-5xl font-bold text-primary/20">02</span>
+            <div className="flex items-start gap-3 sm:gap-4">
+              <span className="text-4xl font-bold text-primary/20 sm:text-5xl">02</span>
               <div>
                 <Badge variant="secondary">{t('影视产业', 'Film & Media')}</Badge>
-                <h3 className="text-xl font-bold mt-2">{t('AI 漫剧全流程制作系统', 'AI Comic Drama Production System')}</h3>
+                <h3 className="text-xl font-bold mt-2">{t('AI 媒体内容生产工作流', 'AI Media Production Workflow')}</h3>
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed max-w-3xl">

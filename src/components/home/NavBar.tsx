@@ -1,14 +1,18 @@
 'use client'
 import { useState } from 'react'
 import { useLang } from '@/context/LangContext'
-import { Menu, X } from 'lucide-react'
+import { Download, Menu, X } from 'lucide-react'
+import BrandMark from '@/components/shared/brand-mark'
+import { rootAnchors, siteResources } from '@/data/site-resources'
 
 const navItems = [
-  { zh: '社区', en: 'Community', href: '#mission' },
-  { zh: '活动', en: 'Events', href: '#events' },
-  { zh: '案例', en: 'Cases', href: '#cases' },
-  { zh: '服务', en: 'Services', href: '#services' },
-  { zh: '关于', en: 'About', href: '#partners' },
+  { zh: '社区', en: 'Community', href: rootAnchors.mission },
+  { zh: 'RWA', en: 'RWA', href: rootAnchors.rwa },
+  { zh: '活动', en: 'Events', href: rootAnchors.events },
+  { zh: '案例', en: 'Cases', href: rootAnchors.cases },
+  { zh: '服务', en: 'Services', href: rootAnchors.services },
+  { zh: '伙伴', en: 'Partners', href: rootAnchors.partners },
+  { zh: '下载', en: 'Media Kit', href: siteResources.mediaKit.href, download: true },
 ]
 
 export default function NavBar() {
@@ -20,8 +24,8 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="text-xl font-bold tracking-tight">
-            W³ Labs
+          <a href="/" className="inline-flex items-center">
+            <BrandMark imageClassName="h-10 w-auto" textClassName="text-lg font-semibold tracking-tight" />
           </a>
 
           {/* Desktop Nav */}
@@ -30,8 +34,10 @@ export default function NavBar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+                {...(item.download ? { download: true } : {})}
               >
+                {item.download && <Download size={14} />}
                 {t(item.zh, item.en)}
               </a>
             ))}
@@ -46,13 +52,13 @@ export default function NavBar() {
               {lang === 'zh' ? 'EN' : '中'}
             </button>
             <a
-              href="#cta"
+              href={rootAnchors.cta}
               className="text-sm px-4 py-2 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
             >
               {t('加入社群', 'Join Community')}
             </a>
             <a
-              href="#services"
+              href={rootAnchors.services}
               className="text-sm px-4 py-2 rounded-full bg-[#22C55E] text-white font-medium hover:opacity-90 transition-opacity"
             >
               {t('商务合作', 'Business')}
@@ -91,10 +97,14 @@ export default function NavBar() {
               >
                 {lang === 'zh' ? 'EN' : '中'}
               </button>
-              <a href="#cta" className="text-sm px-4 py-2 rounded-full bg-foreground text-background font-medium">
+              <a href={siteResources.mediaKit.href} download className="text-sm px-4 py-2 rounded-full bg-foreground text-background font-medium inline-flex items-center gap-2">
+                <Download size={14} />
+                {t('下载资料', 'Media Kit')}
+              </a>
+              <a href={rootAnchors.cta} className="text-sm px-4 py-2 rounded-full bg-foreground text-background font-medium">
                 {t('加入社群', 'Join')}
               </a>
-              <a href="#services" className="text-sm px-4 py-2 rounded-full bg-[#22C55E] text-white font-medium">
+              <a href={rootAnchors.services} className="text-sm px-4 py-2 rounded-full bg-[#22C55E] text-white font-medium">
                 {t('商务合作', 'Business')}
               </a>
             </div>

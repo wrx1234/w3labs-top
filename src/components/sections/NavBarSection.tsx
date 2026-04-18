@@ -6,14 +6,17 @@ import { Menu, Sun, Moon, Download } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { useTheme } from 'next-themes'
+import BrandMark from '@/components/shared/brand-mark'
+import { siteResources, rootAnchors } from '@/data/site-resources'
 
 const navItems = [
-  { zh: '社区', en: 'Community', href: '#mission' },
-  { zh: '活动', en: 'Events', href: '#events' },
-  { zh: '案例', en: 'Cases', href: '#cases' },
-  { zh: '服务', en: 'Services', href: '#services' },
-  { zh: '关于', en: 'About', href: '#partners' },
-  { zh: '下载', en: 'Download', href: '/w3labs-brand-kit.zip', icon: true },
+  { zh: '社区', en: 'Community', href: rootAnchors.mission },
+  { zh: 'RWA', en: 'RWA', href: rootAnchors.rwa },
+  { zh: '活动', en: 'Events', href: rootAnchors.events },
+  { zh: '案例', en: 'Cases', href: rootAnchors.cases },
+  { zh: '服务', en: 'Services', href: rootAnchors.services },
+  { zh: '伙伴', en: 'Partners', href: rootAnchors.partners },
+  { zh: '下载', en: 'Media Kit', href: siteResources.mediaKit.href, icon: true, download: true },
 ]
 
 export default function NavBarSection() {
@@ -25,14 +28,14 @@ export default function NavBarSection() {
     <nav className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-6">
         <div className="flex h-16 items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
-            <img src="/w3labs-logo.png" alt="W³ Labs" className="h-8" />
+          <a href="/" className="flex items-center gap-2">
+            <BrandMark imageClassName="h-11 w-auto" textClassName="text-xl font-semibold tracking-[0.02em]" />
           </a>
 
           {/* Desktop */}
           <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1" {...(item.icon ? { download: true } : {})}>
+              <a key={item.href} href={item.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1" {...(item.download ? { download: true } : {})}>
                 {item.icon && <Download className="size-3" />}
                 {t(item.zh, item.en)}
               </a>
@@ -59,11 +62,11 @@ export default function NavBarSection() {
               </SheetTrigger>
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
-                  <SheetTitle><img src="/w3labs-logo.png" alt="W³ Labs" className="h-8" /></SheetTitle>
+                  <SheetTitle><BrandMark imageClassName="h-10 w-auto" textClassName="text-lg font-semibold" /></SheetTitle>
                 </SheetHeader>
                 <div className="my-6 flex flex-col gap-4">
                   {navItems.map((item) => (
-                    <a key={item.href} href={item.href} className="font-semibold flex items-center gap-2" {...(item.icon ? { download: true } : {})}>
+                    <a key={item.href} href={item.href} className="font-semibold flex items-center gap-2" {...(item.download ? { download: true } : {})}>
                       {item.icon && <Download className="size-4" />}
                       {t(item.zh, item.en)}
                     </a>
