@@ -19,6 +19,7 @@ const footerNav = [
       { zh: 'AI 落地撮合', en: 'AI Matchmaking', href: rootAnchors.services },
       { zh: 'AI 培训咨询', en: 'AI Training', href: rootAnchors.services },
       { zh: 'AI 定制开发', en: 'AI Development', href: rootAnchors.services },
+      { zh: '政府合作 / AI 治理方案', en: 'Government / AI Enablement', href: '/pitch' },
       { zh: '品牌资料包', en: 'Media Kit', href: siteResources.mediaKit.href, download: true },
     ],
   },
@@ -33,6 +34,7 @@ const footerNav = [
     title: { zh: '联系', en: 'Contact' },
     links: [
       { zh: '政府合作 & 活动联办', en: 'Government & Co-hosting', href: 'mailto:hello@w3labs.top' },
+      { zh: '查看政府方案页', en: 'Open Gov / AI Deck', href: '/pitch' },
       { zh: 'xuan13ie@gmail.com', en: 'xuan13ie@gmail.com', href: 'mailto:xuan13ie@gmail.com' },
     ],
   },

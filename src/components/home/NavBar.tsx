@@ -11,6 +11,7 @@ const navItems = [
   { zh: '活动', en: 'Events', href: rootAnchors.events },
   { zh: '案例', en: 'Cases', href: rootAnchors.cases },
   { zh: '服务', en: 'Services', href: rootAnchors.services },
+  { zh: '政府方案', en: 'Gov / AI', href: '/pitch' },
   { zh: '伙伴', en: 'Partners', href: rootAnchors.partners },
   { zh: '下载', en: 'Media Kit', href: siteResources.mediaKit.href, download: true },
 ]

@@ -18,6 +18,7 @@ export default function FooterSection() {
       { text: t('AI 落地撮合', 'AI Matchmaking'), url: rootAnchors.services },
       { text: t('AI 培训咨询', 'AI Training'), url: rootAnchors.services },
       { text: t('AI 定制开发', 'AI Development'), url: rootAnchors.services },
+      { text: t('政府合作 / AI 治理方案', 'Government / AI Enablement'), url: '/pitch' },
       { text: t('品牌资料包', 'Media Kit'), url: siteResources.mediaKit.href, download: true },
     ]},
     { title: t('近期活动', 'Upcoming'), links: [
@@ -26,6 +27,7 @@ export default function FooterSection() {
     ]},
     { title: t('联系', 'Contact'), links: [
       { text: t('政府合作 & 活动联办', 'Government & Co-hosting'), url: 'mailto:hello@w3labs.top' },
+      { text: t('查看政府方案页', 'Open Gov / AI Deck'), url: '/pitch' },
       { text: 'xuan13ie@gmail.com', url: 'mailto:xuan13ie@gmail.com' },
     ]},
   ]
