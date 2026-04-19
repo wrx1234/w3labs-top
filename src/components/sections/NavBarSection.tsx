@@ -57,6 +57,9 @@ export default function NavBarSection() {
             <Button variant="ghost" size="icon" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
               {theme === 'dark' ? <Sun className="size-4" /> : <Moon className="size-4" />}
             </Button>
+            <Button variant="outline" size="sm" onClick={toggle} className="min-w-11 px-3 font-semibold">
+              {lang === 'zh' ? 'EN' : '中'}
+            </Button>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon"><Menu className="size-4" /></Button>
@@ -74,7 +77,6 @@ export default function NavBarSection() {
                   ))}
                   <hr className="border-border" />
                   <div className="flex flex-col gap-3">
-                    <Button variant="ghost" size="sm" onClick={toggle}>{lang === 'zh' ? 'EN' : '中'}</Button>
                     <Button variant="outline" onClick={() => openDialog('community')}>{t('加入社群', 'Join')}</Button>
                     <Button onClick={() => openDialog('business')}>{t('商务合作', 'Business')}</Button>
                   </div>
